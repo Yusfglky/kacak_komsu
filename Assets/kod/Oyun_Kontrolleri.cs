@@ -26,8 +26,7 @@ public class Oyun_Kontrolleri : MonoBehaviour
         }
     }
     private void Update()
-    {
-        Debug.Log(Application.targetFrameRate);
+    {                                                      
         zaman();
         spawner_yarat();
         olum();

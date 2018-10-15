@@ -11,8 +11,7 @@ public class komsu_kontrol : MonoBehaviour
     [Header("Obje Takip")]
     public GameObject hedef;
     public GameObject drop_pos;
-    public float takip_hizi;
-    public float atis_hizi;
+    public float takip_hizi;        
     public bool atiliyor;
     public bool atis_bitir;
     void Start()
@@ -29,22 +28,10 @@ public class komsu_kontrol : MonoBehaviour
     {
         if (!atiliyor)
         {
-            atilacaklar[rnd].transform.position = Vector3.MoveTowards(atilacaklar[rnd].transform.position, hedef.transform.position, takip_hizi);  
-        }
-        /* else
-         {      
-                 if (!atis_bitir)
-                 {
-                     atilacaklar[rnd].transform.position = Vector3.MoveTowards(atilacaklar[rnd].transform.position, GameObject.Find("head_").transform.position, atis_hizi);
-                 }  
-             Invoke("atis_tamamla", 0.6f);
-         }    
-     }
-     void atis_tamamla()
-     {
-         atis_bitir = true;    */
+            atilacaklar[rnd].transform.position = Vector3.MoveTowards(atilacaklar[rnd].transform.position, hedef.transform.position, takip_hizi);
+        }                         
     }
-    public IEnumerator atis_bekle()
+    public IEnumerator atis_bekle()                                                                                   
     {
         yield return new WaitForSeconds(1.6f);
         transform.position = walk_pos.position;
